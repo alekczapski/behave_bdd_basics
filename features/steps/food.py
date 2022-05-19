@@ -2,12 +2,12 @@ from behave import given, when, then
 
 @given("there were {amount:d} cucumbers")
 def step_cucumber(context, amount):
-    pass
+    context.amount_of_cucumbers = amount
 
 @when("I eat {eaten:d} cucumbers")
 def step_eating(context, eaten):
-    pass
+    context.amount_of_cucumbers = context.amount_of_cucumbers - eaten
 
 @then("I should have {left:d} cucumbers")
 def step_after(context, left):
-    pass
+    assert context.amount_of_cucumbers == left
