@@ -1,6 +1,12 @@
 Feature: Healthy food
 
-  Scenario: eating
-    Given there were 5 cucumbers
-    When I eat 3 cucumbers
-    Then I should have 2 cucumbers
+  Scenario Outline: eating
+    Given there were <amount> cucumbers
+    When I eat <eaten> cucumbers
+    Then I should have <left> cucumbers
+
+    Examples:
+      | amount | eaten | left |
+      |      5 |     2 |    3 |
+      |      3 |     3 |    0 |
+      |      0 |     0 |    0 |
