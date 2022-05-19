@@ -1,13 +1,13 @@
 from behave import given, when, then
 
-@given("there were 5 cucumbers")
-def step_cucumber(context):
+@given("there were {amount:d} cucumbers")
+def step_cucumber(context, amount):
     pass
 
-@when("I eat 3 cucumbers")
-def step_eating(context):
+@when("I eat {eaten:d} cucumbers")
+def step_eating(context, eaten):
     pass
 
-@then("I should have 2 cucumbers")
-def step_after(context):
+@then("I should have {left:d} cucumbers")
+def step_after(context, left):
     pass
